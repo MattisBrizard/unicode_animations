@@ -1,0 +1,142 @@
+/// Pure Dart port of unicode-animations.
+///
+/// Provides 18+ Unicode Braille spinner animations.
+library;
+
+import 'package:unicode_animations/src/generators/breathe.dart';
+import 'package:unicode_animations/src/generators/cascade.dart';
+import 'package:unicode_animations/src/generators/checkerboard.dart';
+import 'package:unicode_animations/src/generators/columns.dart';
+import 'package:unicode_animations/src/generators/diag_swipe.dart';
+import 'package:unicode_animations/src/generators/fill_sweep.dart';
+import 'package:unicode_animations/src/generators/hardcoded.dart';
+import 'package:unicode_animations/src/generators/helix.dart';
+import 'package:unicode_animations/src/generators/orbit.dart';
+import 'package:unicode_animations/src/generators/pulse.dart';
+import 'package:unicode_animations/src/generators/rain.dart';
+import 'package:unicode_animations/src/generators/scan.dart';
+import 'package:unicode_animations/src/generators/scan_line.dart';
+import 'package:unicode_animations/src/generators/snake.dart';
+import 'package:unicode_animations/src/generators/sparkle.dart';
+import 'package:unicode_animations/src/generators/wave_rows.dart';
+
+export 'package:unicode_animations/src/braille_helpers.dart';
+export 'package:unicode_animations/src/generators/breathe.dart';
+export 'package:unicode_animations/src/generators/cascade.dart';
+export 'package:unicode_animations/src/generators/checkerboard.dart';
+export 'package:unicode_animations/src/generators/columns.dart';
+export 'package:unicode_animations/src/generators/diag_swipe.dart';
+export 'package:unicode_animations/src/generators/fill_sweep.dart';
+export 'package:unicode_animations/src/generators/hardcoded.dart';
+export 'package:unicode_animations/src/generators/helix.dart';
+export 'package:unicode_animations/src/generators/orbit.dart';
+export 'package:unicode_animations/src/generators/pulse.dart';
+export 'package:unicode_animations/src/generators/rain.dart';
+export 'package:unicode_animations/src/generators/scan.dart';
+export 'package:unicode_animations/src/generators/scan_line.dart';
+export 'package:unicode_animations/src/generators/snake.dart';
+export 'package:unicode_animations/src/generators/sparkle.dart';
+export 'package:unicode_animations/src/generators/wave_rows.dart';
+
+/// A Unicode spinner animation frame sequence.
+class Spinner {
+  /// Creates a new spinner with the given [frames] and [intervalInMs].
+  const Spinner({
+    required this.frames,
+    required this.intervalInMs,
+  });
+
+  /// The animation frames as Unicode strings.
+  final List<String> frames;
+
+  /// The interval between frames in milliseconds.
+  final int intervalInMs;
+
+  /// Returns the pre-computed [Spinner] for [name].
+  ///
+  /// This is a convenient non-nullable alternative to `spinners[name]!`.
+  ///
+  /// ```dart
+  /// final s = Spinner.of(BrailleSpinnerName.helix);
+  /// ```
+  static Spinner of(BrailleSpinnerName name) => spinners[name]!;
+}
+
+/// Names of all available spinners.
+enum BrailleSpinnerName {
+  /// Classic Braille spinner (1 char).
+  braille,
+
+  /// Braille wave pattern (4 chars).
+  brailleWave,
+
+  /// DNA double-helix pattern (4 chars).
+  dna,
+
+  /// Vertical scanning bar (4 chars).
+  scan,
+
+  /// Falling rain drops (4 chars).
+  rain,
+
+  /// Horizontal scan line (3 chars).
+  scanLine,
+
+  /// Expanding circular pulse (3 chars).
+  pulse,
+
+  /// Moving snake (2 chars).
+  snake,
+
+  /// Random sparkle pattern (4 chars).
+  sparkle,
+
+  /// Diagonal cascade sweep (4 chars).
+  cascade,
+
+  /// Columns filling bottom-up (3 chars).
+  columns,
+
+  /// Circling orbit pattern (1 char).
+  orbit,
+
+  /// Breathing expansion/contraction (1 char).
+  breathe,
+
+  /// Wave moving through rows (4 chars).
+  waveRows,
+
+  /// Alternating checkerboard (3 chars).
+  checkerboard,
+
+  /// Double sine wave helix (4 chars).
+  helix,
+
+  /// Filling and sweeping rows (2 chars).
+  fillSweep,
+
+  /// Diagonal sweep wipe (2 chars).
+  diagSwipe,
+}
+
+/// Pre-computed map of all available spinners by name.
+final Map<BrailleSpinnerName, Spinner> spinners = Map.unmodifiable({
+  BrailleSpinnerName.braille: brailleSpinner,
+  BrailleSpinnerName.brailleWave: brailleWaveSpinner,
+  BrailleSpinnerName.dna: dnaSpinner,
+  BrailleSpinnerName.scan: scanSpinner,
+  BrailleSpinnerName.rain: rainSpinner,
+  BrailleSpinnerName.scanLine: scanLineSpinner,
+  BrailleSpinnerName.pulse: pulseSpinner,
+  BrailleSpinnerName.snake: snakeSpinner,
+  BrailleSpinnerName.sparkle: sparkleSpinner,
+  BrailleSpinnerName.cascade: cascadeSpinner,
+  BrailleSpinnerName.columns: columnsSpinner,
+  BrailleSpinnerName.orbit: orbitSpinner,
+  BrailleSpinnerName.breathe: breatheSpinner,
+  BrailleSpinnerName.waveRows: waveRowsSpinner,
+  BrailleSpinnerName.checkerboard: checkerboardSpinner,
+  BrailleSpinnerName.helix: helixSpinner,
+  BrailleSpinnerName.fillSweep: fillSweepSpinner,
+  BrailleSpinnerName.diagSwipe: diagSwipeSpinner,
+});

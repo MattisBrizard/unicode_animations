@@ -1,0 +1,13 @@
+name: unicode_animations
+description: Unicode spinner animations (Braille + procedural). Pure Dart.
+version: 1.0.0
+homepage: https://github.com/MattisBrizard/unicode_animations
+repository: https://github.com/MattisBrizard/unicode_animations
+issue_tracker: https://github.com/MattisBrizard/unicode_animations/issues
+
+environment:
+  sdk: ^3.3.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
