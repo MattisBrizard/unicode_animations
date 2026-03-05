@@ -1,3 +1,8 @@
+## 1.0.1
+
+- Added `example/example.dart` so the package example is detected by pub.dev (Improve pub.dev score)
+- Updated demo.gif to better preview available animations.
+
 ## 1.0.0
 
 **Initial release** — pure Dart port of the [unicode-animations](https://github.com/gunnargray-dev/unicode-animations) TypeScript library.

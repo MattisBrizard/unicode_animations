@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:unicode_animations/unicode_animations.dart';
 
-Future<T> runWithSpinner<T>(
+Future<T> _runWithSpinner<T>(
   String label,
   Future<T> Function() fn, {
   BrailleSpinnerName name = BrailleSpinnerName.braille,
@@ -24,22 +24,22 @@ Future<T> runWithSpinner<T>(
 }
 
 Future<void> main() async {
-  await runWithSpinner(
+  await _runWithSpinner(
     'Linting...',
     _asyncOperation,
     name: BrailleSpinnerName.scan,
   );
-  await runWithSpinner(
+  await _runWithSpinner(
     'Running tests...',
     _asyncOperation,
     name: BrailleSpinnerName.helix,
   );
-  await runWithSpinner(
+  await _runWithSpinner(
     'Building...',
     _asyncOperation,
     name: BrailleSpinnerName.cascade,
   );
-  await runWithSpinner(
+  await _runWithSpinner(
     'Publishing...',
     _asyncOperation,
     name: BrailleSpinnerName.braille,
