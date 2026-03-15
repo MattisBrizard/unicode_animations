@@ -1,14 +1,18 @@
-/// Braille character base codepoint.
-const int _brailleBase = 0x2800;
+/// Braille character base codepoint (`U+2800`).
+const int brailleBase = 0x2800;
 
-/// Dot bit map: each position (row, col) maps to a bit in the 8-dot Braille character.
+/// Dot bit map: each position `[row][col]` maps to a bit in the 8-dot Braille
+/// character.
+///
 /// Layout:
+/// ```
 ///   col 0    col 1
 /// row 0: 0x01  0x08
 /// row 1: 0x02  0x10
 /// row 2: 0x04  0x20
 /// row 3: 0x40  0x80
-const List<List<int>> _dotMap = [
+/// ```
+const List<List<int>> dotBits = [
   [0x01, 0x08],
   [0x02, 0x10],
   [0x04, 0x20],
@@ -69,14 +73,14 @@ String gridToBraille(List<List<bool>> grid) {
     // For each row, accumulate bits from columns [col] and [col+1]
     for (int row = 0; row < grid.length; row++) {
       if (grid[row][col]) {
-        code |= _dotMap[row][0];
+        code |= dotBits[row][0];
       }
       if (grid[row][col + 1]) {
-        code |= _dotMap[row][1];
+        code |= dotBits[row][1];
       }
     }
 
-    buffer.writeCharCode(_brailleBase | code);
+    buffer.writeCharCode(brailleBase | code);
   }
 
   return buffer.toString();

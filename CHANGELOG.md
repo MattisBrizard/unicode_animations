@@ -1,3 +1,20 @@
+## 1.1.0
+
+![New spinners preview](assets/110.gif)
+
+### New spinners
+
+3 new procedural generators ported from [esceptico's CodePen](https://codepen.io/esceptico/pen/LEZaJPa):
+
+- `pendulum` — swinging pendulum wave (120 frames, 10 chars)
+- `compress` — data compression visualization (100 frames, 10 chars)
+- `sort` — sorting visualization with sweep cursor (100 frames, 10 chars)
+
+### New public API
+
+- `brailleBase` — Braille character base codepoint (`U+2800`)
+- `dotBits` — dot bit map for direct Braille bit manipulation
+
 ## 1.0.1
 
 - Added `example/example.dart` so the package example is detected by pub.dev (Improve pub.dev score)
