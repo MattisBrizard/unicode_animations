@@ -12,7 +12,7 @@ A pure Dart port of [`unicode-animations`](https://github.com/gunnargray-dev/uni
 
 ![demo](assets/demo.gif)
 
-See all 21 spinners in the terminal:
+See all 24 spinners in the terminal:
 
 ```bash
 # Cycle through all spinners
@@ -30,7 +30,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  unicode_animations: ^1.1.0
+  unicode_animations: ^1.2.0
 ```
 
 ```bash
@@ -195,6 +195,9 @@ class _SpinnerTextState extends State<SpinnerText> {
 | `pendulum`     | 120    | 12ms         |
 | `compress`     | 100    | 40ms         |
 | `sort`         | 100    | 40ms         |
+| `typing`       | 14     | 100ms        |
+| `gameOfLife`   | 14     | 120ms        |
+| `progressBar`  | 44     | 50ms         |
 
 ## Custom spinners
 
@@ -270,7 +273,10 @@ enum BrailleSpinnerName {
   diagSwipe,
   pendulum,
   compress,
-  sort;
+  sort,
+  typing,
+  gameOfLife,
+  progressBar;
 }
 ```
 
@@ -278,7 +284,7 @@ enum BrailleSpinnerName {
 
 | Export                             | Type                               | Description                                               |
 | ---------------------------------- | ---------------------------------- | --------------------------------------------------------- |
-| `spinners`                         | `Map<BrailleSpinnerName, Spinner>` | Pre-computed, unmodifiable map of all 21 spinners         |
+| `spinners`                         | `Map<BrailleSpinnerName, Spinner>` | Pre-computed, unmodifiable map of all 24 spinners         |
 | `Spinner.of(name)`                 | `Spinner`                          | Preferred non-nullable lookup                             |
 | `makeGrid(rows, cols)`             | `List<List<bool>>`                 | Create an empty Braille dot grid                          |
 | `gridToBraille(grid)`              | `String`                           | Convert a grid to a Braille string                        |

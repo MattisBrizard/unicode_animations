@@ -983,6 +983,126 @@ void main() {
     });
   });
 
+  group('Typing spinner', () {
+    test('typing spinner has correct frame count', () {
+      expect(spinners[BrailleSpinnerName.typing]!.frames.length, 14);
+    });
+
+    test('typing spinner has correct intervalInMs', () {
+      expect(spinners[BrailleSpinnerName.typing]!.intervalInMs, 100);
+    });
+
+    test('typing spinner has correct frames', () {
+      final expected = [
+        '⡇⠀⠀',
+        '⢿⠀⠀',
+        '⠿⡇⠀',
+        '⠿⢿⠀',
+        '⠿⠿⡇',
+        '⠿⠿⢿',
+        '⠿⠿⠿',
+        '⠿⠿⠇',
+        '⠿⠿⠀',
+        '⠿⠇⠀',
+        '⠿⠀⠀',
+        '⠇⠀⠀',
+        '⠀⠀⠀',
+        '⡇⠀⠀',
+      ];
+      expect(spinners[BrailleSpinnerName.typing]!.frames, expected);
+    });
+  });
+
+  group('GameOfLife spinner', () {
+    test('gameOfLife spinner has correct frame count', () {
+      expect(spinners[BrailleSpinnerName.gameOfLife]!.frames.length, 14);
+    });
+
+    test('gameOfLife spinner has correct intervalInMs', () {
+      expect(spinners[BrailleSpinnerName.gameOfLife]!.intervalInMs, 120);
+    });
+
+    test('gameOfLife spinner has correct frames', () {
+      final expected = [
+        '⢈⣭⠜⣡',
+        '⠽⠈⠼⢨',
+        '⠨⡁⢵⠨',
+        '⠘⡛⢽⠁',
+        '⢰⡀⠠⠅',
+        '⢬⡁⢐⡂',
+        '⠮⠇⠀⠠',
+        '⠌⠕⠀⠰',
+        '⡄⡑⠀⠰',
+        '⡮⠉⠀⢰',
+        '⠨⠁⠀⢔',
+        '⣗⡂⠀⠤',
+        '⠀⠀⠀⠈',
+        '⠀⠀⠀⠀',
+      ];
+      expect(spinners[BrailleSpinnerName.gameOfLife]!.frames, expected);
+    });
+  });
+
+  group('ProgressBar spinner', () {
+    test('progressBar spinner has correct frame count', () {
+      expect(spinners[BrailleSpinnerName.progressBar]!.frames.length, 44);
+    });
+
+    test('progressBar spinner has correct intervalInMs', () {
+      expect(spinners[BrailleSpinnerName.progressBar]!.intervalInMs, 50);
+    });
+
+    test('progressBar spinner has correct frames', () {
+      final expected = [
+        '⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+        '⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+        '⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀',
+        '⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀',
+        '⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀',
+        '⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀',
+        '⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀',
+        '⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀',
+        '⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀',
+        '⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀',
+        '⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀',
+        '⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀',
+        '⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀',
+        '⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀',
+        '⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀',
+        '⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀',
+        '⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀',
+        '⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀',
+        '⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆',
+        '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+        '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+        '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+        '⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+        '⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+        '⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿',
+        '⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿',
+        '⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿',
+        '⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿',
+        '⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿',
+        '⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿',
+        '⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿',
+        '⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿',
+        '⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿',
+        '⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿',
+        '⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿',
+        '⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿',
+        '⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿',
+        '⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿',
+        '⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿',
+        '⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿',
+        '⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸',
+        '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+        '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+        '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+      ];
+      expect(spinners[BrailleSpinnerName.progressBar]!.frames, expected);
+    });
+  });
+
   group('Spinner.of', () {
     test('returns the correct spinner', () {
       expect(Spinner.of(BrailleSpinnerName.braille).frames.length, 10);
@@ -1013,8 +1133,8 @@ void main() {
   });
 
   group('Spinners map', () {
-    test('contains all 21 spinners', () {
-      expect(spinners.length, 21);
+    test('contains all 24 spinners', () {
+      expect(spinners.length, 24);
     });
 
     test('all spinners have non-empty frames', () {
@@ -1145,6 +1265,24 @@ void main() {
       final spinner = generateSort(intervalInMs: 50);
       expect(spinner.intervalInMs, 50);
       expect(spinner.frames.length, 100);
+    });
+
+    test('generateTyping with custom intervalInMs', () {
+      final spinner = generateTyping(intervalInMs: 150);
+      expect(spinner.intervalInMs, 150);
+      expect(spinner.frames.length, 14);
+    });
+
+    test('generateGameOfLife with custom intervalInMs', () {
+      final spinner = generateGameOfLife(intervalInMs: 200);
+      expect(spinner.intervalInMs, 200);
+      expect(spinner.frames.length, 14);
+    });
+
+    test('generateProgressBar with custom intervalInMs', () {
+      final spinner = generateProgressBar(intervalInMs: 80);
+      expect(spinner.intervalInMs, 80);
+      expect(spinner.frames.length, 44);
     });
 
     test('default intervalInMs matches pre-computed spinner', () {

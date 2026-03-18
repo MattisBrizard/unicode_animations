@@ -1,6 +1,18 @@
+## 1.2.0
+
+![1.2.0 new spinners preview](assets/120.gif)
+
+### New spinners
+
+3 new procedural generators:
+
+- `typing` — cursor typing effect (14 frames, 3 chars)
+- `gameOfLife` — Conway's Game of Life simulation (14 frames, 4 chars)
+- `progressBar` — horizontal fill-and-drain progress bar (44 frames, 10 chars)
+
 ## 1.1.0
 
-![New spinners preview](assets/110.gif)
+![1.1.0 new spinners preview](assets/110.gif)
 
 ### New spinners
 

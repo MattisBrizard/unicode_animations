@@ -1,6 +1,6 @@
 /// Pure Dart port of unicode-animations.
 ///
-/// Provides 21 Unicode Braille spinner animations.
+/// Provides 24 Unicode Braille spinner animations.
 library;
 
 import 'package:unicode_animations/src/generators/breathe.dart';
@@ -10,10 +10,12 @@ import 'package:unicode_animations/src/generators/columns.dart';
 import 'package:unicode_animations/src/generators/compress.dart';
 import 'package:unicode_animations/src/generators/diag_swipe.dart';
 import 'package:unicode_animations/src/generators/fill_sweep.dart';
+import 'package:unicode_animations/src/generators/game_of_life.dart';
 import 'package:unicode_animations/src/generators/hardcoded.dart';
 import 'package:unicode_animations/src/generators/helix.dart';
 import 'package:unicode_animations/src/generators/orbit.dart';
 import 'package:unicode_animations/src/generators/pendulum.dart';
+import 'package:unicode_animations/src/generators/progress_bar.dart';
 import 'package:unicode_animations/src/generators/pulse.dart';
 import 'package:unicode_animations/src/generators/rain.dart';
 import 'package:unicode_animations/src/generators/scan.dart';
@@ -21,6 +23,7 @@ import 'package:unicode_animations/src/generators/scan_line.dart';
 import 'package:unicode_animations/src/generators/snake.dart';
 import 'package:unicode_animations/src/generators/sort.dart';
 import 'package:unicode_animations/src/generators/sparkle.dart';
+import 'package:unicode_animations/src/generators/typing.dart';
 import 'package:unicode_animations/src/generators/wave_rows.dart';
 
 export 'package:unicode_animations/src/braille_helpers.dart';
@@ -31,10 +34,12 @@ export 'package:unicode_animations/src/generators/columns.dart';
 export 'package:unicode_animations/src/generators/compress.dart';
 export 'package:unicode_animations/src/generators/diag_swipe.dart';
 export 'package:unicode_animations/src/generators/fill_sweep.dart';
+export 'package:unicode_animations/src/generators/game_of_life.dart';
 export 'package:unicode_animations/src/generators/hardcoded.dart';
 export 'package:unicode_animations/src/generators/helix.dart';
 export 'package:unicode_animations/src/generators/orbit.dart';
 export 'package:unicode_animations/src/generators/pendulum.dart';
+export 'package:unicode_animations/src/generators/progress_bar.dart';
 export 'package:unicode_animations/src/generators/pulse.dart';
 export 'package:unicode_animations/src/generators/rain.dart';
 export 'package:unicode_animations/src/generators/scan.dart';
@@ -42,6 +47,7 @@ export 'package:unicode_animations/src/generators/scan_line.dart';
 export 'package:unicode_animations/src/generators/snake.dart';
 export 'package:unicode_animations/src/generators/sort.dart';
 export 'package:unicode_animations/src/generators/sparkle.dart';
+export 'package:unicode_animations/src/generators/typing.dart';
 export 'package:unicode_animations/src/generators/wave_rows.dart';
 
 /// A Unicode spinner animation frame sequence.
@@ -132,6 +138,15 @@ enum BrailleSpinnerName {
 
   /// Diagonal sweep wipe (2 chars).
   diagSwipe,
+
+  /// Cursor typing effect (3 chars).
+  typing,
+
+  /// Conway's Game of Life (4 chars).
+  gameOfLife,
+
+  /// Horizontal progress bar (10 chars).
+  progressBar,
 }
 
 /// Pre-computed map of all available spinners by name.
@@ -157,4 +172,7 @@ final Map<BrailleSpinnerName, Spinner> spinners = Map.unmodifiable({
   BrailleSpinnerName.helix: helixSpinner,
   BrailleSpinnerName.fillSweep: fillSweepSpinner,
   BrailleSpinnerName.diagSwipe: diagSwipeSpinner,
+  BrailleSpinnerName.typing: typingSpinner,
+  BrailleSpinnerName.gameOfLife: gameOfLifeSpinner,
+  BrailleSpinnerName.progressBar: progressBarSpinner,
 });
